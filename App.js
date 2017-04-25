@@ -1,15 +1,36 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import I18n from 'react-native-i18n'
+
+const deviceLocale = I18n.locale
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>!!! Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
+        <Text>12 {I18n.t('greeting')}</Text>
+        <Text>{deviceLocale}</Text>
         <Text>Shake your phone to open the developer menu.</Text>
       </View>
     );
+  }
+}
+
+I18n.translations = {
+  'en-US': {
+    greeting: 'This is en-US, Hello!!'
+  },
+  'en': {
+    greeting: 'This is en, Hiya!!!'
+  },
+  en: {
+    greeting: 'This is en2, Hiya!!!'
+  },
+  es: {
+    greeting: 'This is es, Hola!!!!'
+  },
+  fr: {
+    greeting: 'This is fr, Bonjour!!'
   }
 }
 
