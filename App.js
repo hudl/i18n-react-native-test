@@ -4,12 +4,14 @@ import I18n from 'react-native-i18n'
 
 const deviceLocale = I18n.locale
 
+var currentLocale = I18n.currentLocale();
+
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Text>12 {I18n.t('greeting')}</Text>
-        <Text>{deviceLocale}</Text>
+        <Text>{currentLocale}</Text>
         <Text>Shake your phone to open the developer menu.</Text>
       </View>
     );
